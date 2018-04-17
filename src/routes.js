@@ -7,7 +7,7 @@ import Details from "./components/Details";
 
 Vue.use(Router);
 
-const routes = new Router({
+export default new Router({
   routes: [
     {
       path: "/",
@@ -26,5 +26,3 @@ const routes = new Router({
     }
   ]
 });
-
-export default routes;
