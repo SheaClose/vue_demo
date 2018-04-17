@@ -1,16 +1,21 @@
 <template>
   <div>
     <h1>Details Vue: {{ $route.params.id }}</h1>
-    <div>
+    <Detail 
+      :url="product.url"
+      :title="product.title"
+    />
+    <!-- <div>
       <img :src="product.url" :alt="product.title">
       <div>{{product.title}}</div>
       <hr>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import Detail from "./Detail";
 export default {
   data() {
     return {
@@ -26,6 +31,9 @@ export default {
     product() {
       return this.products.find(c => c.id == this.$route.params.id) || {};
     }
+  },
+  components: {
+    Detail
   }
 };
 </script>
